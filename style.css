@@ -1,0 +1,161 @@
+/*
+Author: @Michael Alex Dirks
+Date: 22 August 2021
+*/
+
+* {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    min-height: 100vh;
+    background-color: cadetblue;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    color: yellow;
+    margin-top: 50px;
+    text-align: center;
+}
+
+form {
+    margin-top: 25px;
+    background-color: white;
+}
+
+form input {
+    font-family: 'Courier New', Courier, monospace;
+    width: 250px;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding: 0 5px;
+    align-self: center;
+}
+
+form button {
+    font-family: 'Courier New', Courier, monospace;
+    width: 100px;
+    height: 40px;
+    border: none;
+    background: rgb(150, 255, 150);
+    color: black;
+    outline: none;
+    cursor: pointer;
+}
+
+.container {
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 25px;
+}
+
+ul {
+    font-family: 'Courier New', Courier, monospace;
+    list-style: none;
+    width: 500px;
+    text-decoration: none;
+}
+
+ul li {
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+    background: white;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 5px;
+    position: relative;
+    cursor: pointer;
+    display: block;
+    margin: 5px 0;
+    transition: 0.5s linear;
+    text-decoration: none;
+}
+
+ul li span {
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    text-align: center;
+    background-color: rgb(255, 70, 70);
+}
+
+.changeLi {
+    /*color: red;*/
+    text-decoration: line-through;
+}
+
+
+/* for mobile devices relative to modern devices*/
+
+@media (max-width: 768px) {
+    form {
+        margin-top: 25px;
+        background-color: white;
+    }
+    form input {
+        font-family: 'Courier New', Courier, monospace;
+        width: 200px;
+        height: 70px;
+        border: none;
+        outline: none;
+        padding: 0 5px;
+        align-self: center;
+    }
+    form button {
+        font-family: 'Courier New', Courier, monospace;
+        width: 75px;
+        height: 70px;
+        border: none;
+        background: rgb(150, 255, 150);
+        color: black;
+        outline: none;
+        cursor: pointer;
+    }
+    ul {
+        font-family: 'Courier New', Courier, monospace;
+        list-style: none;
+        width: 200px;
+        text-decoration: none;
+    }
+    ul li {
+        font-family: 'Courier New', Courier, monospace;
+        width: 200px;
+        background: white;
+        height: 50px;
+        line-height: 40px;
+        padding: 0 5px;
+        position: relative;
+        cursor: pointer;
+        display: block;
+        margin: 5px 0;
+        transition: 0.5s linear;
+        text-decoration: none;
+    }
+    ul li span {
+        font-family: 'Courier New', Courier, monospace;
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60px;
+        height: 50px;
+        text-align: center;
+        background-color: rgb(255, 70, 70);
+    }
+    .container {
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+        margin-top: 20px;
+    }
+}

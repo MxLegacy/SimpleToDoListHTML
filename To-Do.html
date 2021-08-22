@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<!--   Author: @Michael Alex Dirks 
+        Date: 22 August 2021
+-->
+
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+
+
+<title>
+    To-Do List
+
+</title>
+
+<head>
+</head>
+
+
+<body>
+    <h1>Simple To-Do List</h1>
+
+    <form>
+        <input type="text" name="text" id="txt" required>
+        <button type="submit" class="btnList">
+        add
+    </button>
+    </form>
+    <div class="container">
+        <ul id="task-list">
+        </ul>
+    </div>
+
+    <script>
+        const inputText = document.querySelector('#txt');
+        const myButton = document.querySelector('.btnList');
+        const list = document.querySelector('.container ul');
+
+
+        const item = {
+            taskID: 1,
+            id: 0,
+            complete: false,
+        }
+        let listTask = [];
+
+
+        //////////**************************
+        myButton.addEventListener('click', (e) => {
+            if (inputText.value != "") {
+                e.preventDefault();
+                //create item
+                item.id++
+                    item.taskID++;
+                //console.log(item)
+
+                let myLi = document.createElement('li');
+                //setting value
+
+                //*testing purposes* let itemContent = document.createTextNode(`This is list item number ${item.id}`)
+
+                myLi.innerHTML = inputText.value;
+                listTask[item.taskID] = document.getElementById('txt').value;
+                console.log(listTask[item.taskID]);
+                myLi.identiy = list.length;
+
+                //create delete button
+                const mySpan = document.createElement('span');
+                mySpan.innerHTML = 'x';
+                myLi.appendChild(mySpan);
+
+                document.querySelector('#task-list').appendChild(myLi)
+
+                //local storages
+                //needs to be fixed tho
+                localStorage.setItem("data", listTask[item.taskID]);
+                localStorage.setItem("id", item.id);
+                console.log(localStorage);
+
+            }
+
+
+
+            //reset input field
+            inputText.value = "";
+
+            //Closing
+            const close = document.querySelectorAll('span');
+            for (let i = 0; i < close.length; i++) {
+                close[i].addEventListener('click', () => {
+                    close[i].parentElement.style.opacity = 0;
+                    setTimeout(() => {
+                        close[i].parentElement.style.display = "none";
+                    }, 500)
+                })
+            }
+
+            //editing
+
+        })
+
+        const changeTask = (e) => {
+            if (e.target.matches('li')) {
+                e.target.classList.toggle('changeLi')
+            }
+        }
+        document.querySelector('#task-list').addEventListener('click', changeTask);
+    </script>
+
+
+</body>
+
+
+
+</html>
